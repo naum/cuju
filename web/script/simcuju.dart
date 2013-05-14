@@ -18,11 +18,13 @@ var SB = {
   'totPoss': 0,
   'totRolls': 0,
   'totShots': 0,
+  'totPenaltyShots': 0,
+  'totCorners': 0,
   'totSaves': 0
 };
 
 final isDebugMode = false;
-final TRIALS = 10000;
+final TRIALS = 12;
 
 main() {
   for (var pn = 0; pn < TRIALS; pn += 1) {
@@ -55,9 +57,11 @@ main() {
       } else if (playResult == 'shoot' || playResult == 'header') {
         SB['biz'] = 'green';
       } else if (playResult == 'penalty' || playResult == 'yellowcard') {
+        SB['totPenaltyShots'] += 1;
         SB['biz'] = 'green';
       } else if (playResult == 'corner') {
         SB['biz'] = 'yellow';
+        SB['totCorners'] += 1;
         SB['totShots'] += 1;
       } else if (playResult == 'goal') {
         SB['totShots'] += 1;
