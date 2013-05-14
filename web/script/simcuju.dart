@@ -24,7 +24,7 @@ var SB = {
 };
 
 final isDebugMode = false;
-final TRIALS = 12;
+final TRIALS = 30;
 
 main() {
   for (var pn = 0; pn < TRIALS; pn += 1) {
