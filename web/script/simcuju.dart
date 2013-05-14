@@ -22,7 +22,7 @@ var SB = {
 };
 
 final isDebugMode = false;
-final TRIALS = 30;
+final TRIALS = 10000;
 
 main() {
   for (var pn = 0; pn < TRIALS; pn += 1) {
@@ -70,6 +70,8 @@ main() {
   }
   if (isDebugMode) print('====');
   print(SB);
+  var goalsPerRoll = SB['goals'] / SB['totRolls'];
+  print('goalsPerRoll: ${goalsPerRoll}');
 }
 
 
