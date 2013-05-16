@@ -1,0 +1,43 @@
+!sequence: red, black, blue, yellow, green
+
+!!red
+# tackled and lost
+# dribble
+# short pass to black
+# inside pass to blue
+# through ball to yellow
+# through ball to green
+
+!!black
+# tackled and lost
+# dribble
+# throw in to blue
+# free kick to yellow
+# through ball to green
+# shoot
+
+!!blue
+# tackled and lost
+# pass back to red
+# long shot at goal
+# shoot
+# header at goal
+# opponent shown yellow card
+
+!!yellow
+# tackled and lost
+# off side
+# pass back to black
+# shoot
+# shoot
+# penalty
+
+!!green
+# wide
+# over bar
+# saved
+# corner to yellow
+# goal
+# goal
+
+
