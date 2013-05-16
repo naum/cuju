@@ -24,7 +24,7 @@ var SB = {
 };
 
 final isDebugMode = false;
-final TRIALS = 30;
+final TRIALS = 10000;
 
 main() {
   for (var pn = 0; pn < TRIALS; pn += 1) {
@@ -75,7 +75,9 @@ main() {
   if (isDebugMode) print('====');
   print(SB);
   var goalsPerRoll = SB['goals'] / SB['totRolls'];
-  print('goalsPerRoll: ${goalsPerRoll}');
+  var shotsPerRoll = SB['totShots'] / SB['totRolls'];
+  print('goalsPer90Rolls: ${goalsPerRoll * 90}');
+  print('shotsPer90Rolls: ${shotsPerRoll * 90}');
 }
 
 
