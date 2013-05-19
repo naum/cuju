@@ -3,6 +3,7 @@
 import 'dart:math';
 
 const DIEFACES = 6;
+final POWERX = pow(10, 0.1);
 
 var entries = [];
 var freqchart = new List.filled(16, 0);
@@ -30,9 +31,10 @@ main() {
     var prob = freqchart[i] / entries.length;
     var nlab = i.toStringAsFixed(0);
     if (nlab.length < 2) nlab = ' ' + nlab;
-    print('${nlab}: ${prob.toStringAsFixed(4)}');
+    print('${nlab}: ${prob.toStringAsFixed(4)} ${skillPower(i).toStringAsFixed(2)}');
   }
   print('mean: ${mean(entries).toStringAsFixed(4)}');
+  print('meanPower: ${meanPower(entries).toStringAsFixed(4)}');
 }
 
 num mean(List l) {
@@ -42,5 +44,16 @@ num mean(List l) {
   }
   return sum / l.length;
 }
+
+num meanPower(List l) {
+  var sum = 0.0;
+  for (var e in l) {
+    sum += skillPower(e);
+  }
+  return sum / l.length;
+}
+
+num skillPower(n) => 17.325 * pow(POWERX, n);
+
 
 
