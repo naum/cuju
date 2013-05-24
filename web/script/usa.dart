@@ -17,6 +17,7 @@ class UsaLeague {
   Map data = {
     'passkey': null,
     'title': 'Universal Soccer Association',
+    'seasonNum': 0,
     'teamTally': 32,
     'clubs': [],
     'freeagents': []
