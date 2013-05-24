@@ -13,18 +13,13 @@ main() {
     var usa = new UsaLeague();
     expect(usa, isNotNull);
     usa.genesis();
-    expect(usa.freeagents.length, equals(32 * 11));
+    expect(usa.data['freeagents'].length, equals(32 * 11));
     reportUsaFreeagents(usa);
-    var serializer = new Serialization()
-      ..addRuleFor(usa);
-    Map oout = serializer.write(usa);
-    print(oout);
-    var usatoo = serializer.read(oout);
   });
 }
 
 reportUsaFreeagents(UsaLeague usa) {
-  for (var fa in usa.freeagents) {
-    print('${fa.pos} ${fa.name} ${fa.attr}');
+  for (var fa in usa.data['freeagents']) {
+    print('${fa['pos']} ${fa['name']} ${fa['attr']}');
   }
 }

@@ -1,5 +1,6 @@
 library usa;
 
+import 'dart:json';
 import 'dart:math';
 import 'horatio.dart';
 import 'namepool.dart';
@@ -13,37 +14,25 @@ class UsaLeague {
     'G': [1, ['T', 'P', 'C', 'V']]
   };
 
-  String title = 'Universal Soccer Association';
-  num teamTally = 32;
-  List clubs = [];
-  List freeagents = [];
+  Map data = {
+    'passkey': null,
+    'title': 'Universal Soccer Association',
+    'teamTally': 32,
+    'clubs': [],
+    'freeagents': []
+  };
 
   UsaLeague() {
   }
 
   genesis() {
-    for (var t = 0; t < teamTally; t += 1) {
+    for (var t = 0; t < data['teamTally']; t += 1) {
       for (var f = 0; f < rosterMatrix['F'][0]; f += 1) {
-        freeagents.add(new UsaMan('F'));
+        data['freeagents'].add(spawnMan('F'));
       }
       for (var g = 0; g < rosterMatrix['G'][0]; g += 1) {
-        freeagents.add(new UsaMan('G'));
+        data['freeagents'].add(spawnMan('G'));
       }
-    }
-  }
-
-}
-
-class UsaMan {
-
-  String pos;
-  String name;
-  Map attr = {};
-
-  UsaMan(this.pos) {
-    name = rollName();
-    for (var a in UsaLeague.rosterMatrix[pos][1]) {
-      attr[a] = rollSkill();
     }
   }
 
@@ -65,6 +54,15 @@ class UsaMan {
     else if (x < 1291) return 13;
     else if (x < 1295) return 14;
     else if (x < 1296) return 15;
+  }
+
+  Map spawnMan(pos) {
+    var name = rollName();
+    var attr = {};
+    for (var a in UsaLeague.rosterMatrix[pos][1]) {
+      attr[a] = rollSkill();
+    }
+    return { 'pos': pos, 'name': name, 'attr': attr };
   }
 
 }
