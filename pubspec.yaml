@@ -1,4 +1,5 @@
 name: cuju
 description: dice soccer virtualized
 dependencies:
+  serialization: any
   unittest: any
