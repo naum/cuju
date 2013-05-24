@@ -27,6 +27,7 @@ class UsaLeague {
 
   genesis() {
     for (var t = 0; t < data['teamTally']; t += 1) {
+      data['clubs'].add(spawnClub());
       for (var f = 0; f < rosterMatrix['F'][0]; f += 1) {
         data['freeagents'].add(spawnMan('F'));
       }
@@ -54,6 +55,11 @@ class UsaLeague {
     else if (x < 1291) return 13;
     else if (x < 1295) return 14;
     else if (x < 1296) return 15;
+  }
+
+  Map spawnClub() {
+    var name = rollTeam();
+    return { 'name': name, 'roster': [] };
   }
 
   Map spawnMan(pos) {
