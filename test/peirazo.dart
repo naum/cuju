@@ -2,6 +2,7 @@
 
 import 'package:serialization/serialization.dart';
 import 'package:unittest/unittest.dart';
+import 'dart:json';
 import '../web/script/horatio.dart';
 import '../web/script/usa.dart';
 
@@ -15,6 +16,8 @@ main() {
     usa.genesis();
     expect(usa.data['freeagents'].length, equals(32 * 11));
     reportUsaFreeagents(usa);
+    var jostr = stringify(usa.data);
+    print('usa.data.length: ${jostr.length}');
   });
 }
 
