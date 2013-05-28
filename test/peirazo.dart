@@ -14,7 +14,7 @@ main() {
     var usa = new UsaLeague();
     expect(usa, isNotNull);
     usa.genesis();
-    expect(usa.data['freeagents'].length, equals(32 * 11));
+    expect(usa.data['freeagents'].length, equals(48 * 11));
     reportUsaFreeagents(usa);
     var jostr = stringify(usa.data);
     print('usa.data.length: ${jostr.length}');

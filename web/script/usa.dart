@@ -18,9 +18,12 @@ class UsaLeague {
     'passkey': null,
     'title': 'Universal Soccer Association',
     'seasonNum': 0,
-    'teamTally': 32,
+    'teamTally': 48,
     'clubs': [],
-    'freeagents': []
+    'freeagents': [],
+    'schedule': [],
+    'standings': {},
+    'stats': {}
   };
 
   UsaLeague() {
